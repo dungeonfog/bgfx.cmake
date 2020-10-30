@@ -16,6 +16,7 @@ file( GLOB GLSLANG_SOURCES
 	${BGFX_DIR}/3rdparty/glslang/glslang/GenericCodeGen/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/glslang/MachineIndependent/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/glslang/MachineIndependent/preprocessor/*.cpp
+	${BGFX_DIR}/3rdparty/glslang/glslang/HLSL/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/hlsl/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/SPIRV/*.cpp
 	${BGFX_DIR}/3rdparty/glslang/OGLCompilersDLL/*.cpp
@@ -32,6 +33,7 @@ target_include_directories( glslang PUBLIC
 	${BGFX_DIR}/3rdparty/spirv-tools/include
 	${BGFX_DIR}/3rdparty/spirv-tools/source
 	${BGFX_DIR}/3rdparty/glslang
+	${BGFX_DIR}/3rdparty/
 	${BGFX_DIR}/3rdparty/glslang/glslang/Include
 	${BGFX_DIR}/3rdparty/glslang/glslang/Public
 )

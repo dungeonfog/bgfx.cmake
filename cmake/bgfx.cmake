@@ -90,7 +90,7 @@ if( BGFX_USE_OVR )
 endif()
 
 # Frameworks required on iOS and macOS
-if( IOS )
+if( ${CMAKE_SYSTEM_NAME} MATCHES iOS|tvOS )
 	target_link_libraries (bgfx PUBLIC "-framework OpenGLES  -framework Metal -framework UIKit -framework CoreGraphics -framework QuartzCore")
 elseif( APPLE )
 	find_library( COCOA_LIBRARY Cocoa )
