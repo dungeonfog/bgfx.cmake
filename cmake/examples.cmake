@@ -175,7 +175,7 @@ function( add_example ARG_NAME )
 		foreach( SHADER ${SHADERS} )
 			add_bgfx_shader( ${SHADER} ${ARG_NAME} )
 		endforeach()
-		source_group( "Shader Files" FILES ${SHADERS})
+		# source_group( "Shader Files" FILES ${SHADERS})
 	endif()
 
 	if (NOT ARG_COMMON AND EMSCRIPTEN)

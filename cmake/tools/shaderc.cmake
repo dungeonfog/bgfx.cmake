@@ -178,7 +178,7 @@ function( add_shader ARG_FILE )
 	)
 
 	# Add to custom filter
-	source_group( "Shader Files" FILES ${ARG_FILE} )
+	# source_group( "Shader Files" FILES ${ARG_FILE} )
 endfunction()
 
 # shaderc( FILE file OUTPUT file ... )
