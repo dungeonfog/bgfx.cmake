@@ -39,7 +39,7 @@ include(GNUInstallDirs)
 
 # Add include directory of bx
 target_include_directories( bx
-	PUBLIC
+	SYSTEM PUBLIC
 		$<BUILD_INTERFACE:${BX_DIR}/include>
 		$<BUILD_INTERFACE:${BX_DIR}/3rdparty>
 		$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}> )
@@ -47,17 +47,17 @@ target_include_directories( bx
 # Build system specific configurations
 if( MSVC )
 	target_include_directories( bx
-		PUBLIC
+		SYSTEM PUBLIC
 			$<BUILD_INTERFACE:${BX_DIR}/include/compat/msvc>
 			$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/compat/msvc> )
 elseif( MINGW )
 	target_include_directories( bx
-		PUBLIC
+		SYSTEM PUBLIC
 		    $<BUILD_INTERFACE:${BX_DIR}/include/compat/mingw>
 		    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/compat/mingw> )
 elseif( APPLE )
 	target_include_directories( bx
-		PUBLIC
+		SYSTEM PUBLIC
 		    $<BUILD_INTERFACE:${BX_DIR}/include/compat/osx>
 		    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/compat/osx> )
 endif()
