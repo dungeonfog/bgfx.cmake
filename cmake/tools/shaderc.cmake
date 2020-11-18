@@ -224,6 +224,13 @@ function( shaderc_parse ARG_OUT )
 	cmake_parse_arguments( ARG "DEPENDS;ANDROID;ASM_JS;IOS;LINUX;NACL;OSX;WINDOWS;PREPROCESS;RAW;FRAGMENT;VERTEX;COMPUTE;VERBOSE;DEBUG;DISASM;WERROR" "FILE;OUTPUT;VARYINGDEF;BIN2C;PROFILE;O" "INCLUDES;DEFINES" ${ARGN} )
 	set( CLI "" )
 
+	list( APPEND CLI "$<$<CONFIG:Debug>:--debug>" )
+	list( APPEND CLI "$<$<CONFIG:Debug>:-O 0>" )
+
+	list( APPEND CLI "$<$<CONFIG:Release>:-O 3>" )
+
+	list( APPEND CLI "--Werror" )
+
 	# -f
 	if( ARG_FILE )
 		list( APPEND CLI "-f" "${ARG_FILE}" )
@@ -340,11 +347,6 @@ function( shaderc_parse ARG_OUT )
 		list( APPEND CLI "--verbose" )
 	endif()
 
-	# --debug
-	if( ARG_DEBUG )
-		list( APPEND CLI "--debug" )
-	endif()
-
 	# --disasm
 	if( ARG_DISASM )
 		list( APPEND CLI "--disasm" )
@@ -353,16 +355,6 @@ function( shaderc_parse ARG_OUT )
 	# --profile
 	if( ARG_PROFILE )
 		list( APPEND CLI "--profile" "${ARG_PROFILE}" )
-	endif()
-
-	# -O
-	if( ARG_O )
-		list( APPEND CLI "-O" "${ARG_O}" )
-	endif()
-
-	# --Werror
-	if( ARG_WERROR )
-		list( APPEND CLI "--Werror" )
 	endif()
 
 	set( ${ARG_OUT} ${CLI} PARENT_SCOPE )
