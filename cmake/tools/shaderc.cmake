@@ -74,11 +74,11 @@ function( add_shader ARG_FILE )
 		set( PLATFORMS ${ARG_PLATFORMS} )
 	else()
 		if( MSVC )
-			set( PLATFORMS glsl) # dx9 dx11 glsl essl asm.js spirv
+			set( PLATFORMS metal glsl dx11) # dx9 dx11 glsl essl asm.js spirv
 		elseif( APPLE )
-			set( PLATFORMS metal glsl) # glsl for compability compilation
+			set( PLATFORMS metal glsl dx11) # glsl for compability compilation
 		else()
-			set( PLATFORMS glsl)
+			set( PLATFORMS metal glsl dx11)
 		endif()
 	endif()
 
