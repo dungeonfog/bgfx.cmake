@@ -78,7 +78,7 @@ function( add_shader ARG_FILE )
 		elseif( APPLE )
 			set( PLATFORMS metal glsl dx11) # glsl for compability compilation
 		else()
-			set( PLATFORMS metal glsl dx11)
+			set( PLATFORMS glsl)
 		endif()
 	endif()
 
