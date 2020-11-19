@@ -76,7 +76,7 @@ function( add_shader ARG_FILE )
 		if( MSVC )
 			set( PLATFORMS metal glsl dx11) # dx9 dx11 glsl essl asm.js spirv
 		elseif( APPLE )
-			set( PLATFORMS metal glsl dx11) # glsl for compability compilation
+			set( PLATFORMS metal glsl)
 		else()
 			set( PLATFORMS glsl)
 		endif()
